@@ -1,0 +1,4 @@
+20230510	23:43:50	18d13cee-2eb9-4dff-a38c-f6bd379a83bd	TypeError: fsPromises.readFile2 is not a function
+20230512	22:08:00	04b5d8f3-7f32-4c6f-ae05-1ddacad5c98f	Error: Not allowed by CORS
+20230513	15:49:23	ecfac6c7-dd91-4ed5-8757-f0c64372a5a6	ReferenceError: employees is not defined
+20230514	11:09:54	952f564c-359a-42ea-8163-c8ed1e3ec761	TypeError: res.setStatus is not a function
