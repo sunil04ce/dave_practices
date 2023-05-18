@@ -1,0 +1,11 @@
+"use strict";
+let username = "Jack2";
+console.log(username);
+let a = 12;
+let b = "6";
+let c = 2;
+console.log(a / b);
+console.log(c * b);
+let myName = "Jack";
+myName = "Mark";
+console.log(myName);
