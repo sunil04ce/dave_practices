@@ -43,3 +43,57 @@ myObj = bands;
 myObj = {};
 
 console.log(typeof myObj);
+
+const exampleObj = {
+  prop1: "Karl",
+  prop2: true,
+};
+
+exampleObj.prop1 = "Jack"; //42;
+
+interface Guitarist {
+  name?: string;
+  active: boolean;
+  albums: (string | number)[];
+}
+
+// type Guitarist = {
+//   name?: string;
+//   active: boolean;
+//   albums: (string | number)[];
+// };
+
+let evh: Guitarist = {
+  name: "Jack",
+  active: false,
+  albums: [1985, 5051, "BHT902"],
+};
+
+let jp: Guitarist = {
+  //name: "Jimmy",
+  active: true,
+  albums: ["I", "II", "IV"],
+};
+
+evh = jp;
+// evh.years = 40;
+
+const greetGuitarist = (guitarist: Guitarist) => {
+  if (guitarist.name) {
+    return `Hello ${guitarist.name.toUpperCase()}!`;
+  } else {
+    return "Hello!";
+  }
+};
+
+console.log(greetGuitarist(jp));
+
+enum Grade {
+  U = 10,
+  D,
+  C,
+  B,
+  A,
+}
+
+console.log(Grade.A);

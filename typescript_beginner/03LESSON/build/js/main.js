@@ -30,3 +30,43 @@ console.log(typeof myObj);
 myObj = bands;
 myObj = {};
 console.log(typeof myObj);
+const exampleObj = {
+    prop1: "Karl",
+    prop2: true,
+};
+exampleObj.prop1 = "Jack"; //42;
+// type Guitarist = {
+//   name?: string;
+//   active: boolean;
+//   albums: (string | number)[];
+// };
+let evh = {
+    name: "Jack",
+    active: false,
+    albums: [1985, 5051, "BHT902"],
+};
+let jp = {
+    //name: "Jimmy",
+    active: true,
+    albums: ["I", "II", "IV"],
+};
+evh = jp;
+// evh.years = 40;
+const greetGuitarist = (guitarist) => {
+    if (guitarist.name) {
+        return `Hello ${guitarist.name.toUpperCase()}!`;
+    }
+    else {
+        return "Hello!";
+    }
+};
+console.log(greetGuitarist(jp));
+var Grade;
+(function (Grade) {
+    Grade[Grade["U"] = 10] = "U";
+    Grade[Grade["D"] = 11] = "D";
+    Grade[Grade["C"] = 12] = "C";
+    Grade[Grade["B"] = 13] = "B";
+    Grade[Grade["A"] = 14] = "A";
+})(Grade || (Grade = {}));
+console.log(Grade.A);
