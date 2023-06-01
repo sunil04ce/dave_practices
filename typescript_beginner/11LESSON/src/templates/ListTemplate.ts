@@ -9,9 +9,16 @@ interface DOMList {
 export default class ListTemplate implements DOMList {
   ul: HTMLUListElement;
 
+  static instance: ListTemplate = new ListTemplate();
+
+  private constructor() {
+    this.ul = document.getElementById("listItems") as HTMLUListElement;
+  }
+
   clear(): void {
     this.ul.innerHTML = "";
   }
+
   render(fullList: FullList): void {
     this.clear();
     fullList.list.forEach((item) => {
@@ -34,10 +41,18 @@ export default class ListTemplate implements DOMList {
       label.htmlFor = item.id;
       label.textContent = item.item;
       li.append(label);
-    });
-  }
 
-  private constructor() {
-    this.ul = document.getElementById("listItems") as HTMLUListElement;
+      const button = document.createElement("button") as HTMLButtonElement;
+      button.className = "button";
+      button.textContent = "X";
+      li.append(button);
+
+      button.addEventListener("click", () => {
+        fullList.removeItem(item.id);
+        this.render(fullList);
+      });
+
+      this.ul.append(li);
+    });
   }
 }
